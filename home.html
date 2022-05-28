@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <title>K-Means</title>
+    <meta charset="utf-8">
+
+    <!-- Import PyScript -->
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+    <py-env>
+        - pandas
+        - scikit-learn
+        - paths:
+          - ./addresses.csv
+    </py-env>
+</head>
+
+<body>
+  <p id="csv"></p> 
+    <py-script >
+import pandas as pd
+df =pd.read_csv("./addresses.csv", header=None) 
+
+csv = Element('csv')
+csv.write(df.head())
+    </py-script>
+</body>
+
+</html>
